@@ -1,4 +1,4 @@
-package visitor;
+package no_patern;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +25,14 @@ public class Livraison implements Commande {
 		return _destinataire;
 	}
 	@Override
-	public float calculatePrice(Visitor v) {
-		return v.visitLivraison(this);
+	public float calculatePrice() {
+		float prix=0;
+		for (Commande c:_composition)
+		{
+			prix+=c.calculatePrice();
+		}
+		prix*=1.2;
+		return prix;
 	}
 
 }

@@ -1,4 +1,5 @@
-package visitor;
+package no_patern;
+
 
 public class Plat_Dessert implements Commande {
 	private String _nom;
@@ -22,9 +23,11 @@ public class Plat_Dessert implements Commande {
 		return _nom;
 	}
 	@Override
-	public float calculatePrice(Visitor v) {
-		// TODO Auto-generated method stub
-		return v.visitPlat_Dessert(this);
+	public float calculatePrice() {
+		if (_isDessert)
+		{
+			return 5;
+		}
+		return 10;
 	}
-
 }

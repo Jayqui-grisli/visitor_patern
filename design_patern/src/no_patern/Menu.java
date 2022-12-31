@@ -1,9 +1,11 @@
-package visitor;
+package no_patern;
+
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Menu implements Commande {
-	
+
 	private List<Commande> _composition=new ArrayList<Commande>();
 	private String _nom;
 	public Menu(String nom)
@@ -23,8 +25,13 @@ public class Menu implements Commande {
 		return _nom;
 	}
 	@Override
-	public float calculatePrice(Visitor v) {
-		// TODO Auto-generated method stub
-		return v.visitMenu(this);
+	public float calculatePrice() {
+		float prix=0;
+		for (Commande c:_composition)
+		{
+			prix+=c.calculatePrice();
+		}
+		prix*=0.9;
+		return prix;
 	}
 }

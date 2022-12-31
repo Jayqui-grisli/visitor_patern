@@ -1,4 +1,4 @@
-package visitor;
+package no_patern;
 
 public class Boisson implements Commande {
 
@@ -23,9 +23,11 @@ public class Boisson implements Commande {
 		return _nom;
 	}
 	@Override
-	public float calculatePrice(Visitor v) {
-		// TODO Auto-generated method stub
-		return v.visitBoisson(this);
+	public float calculatePrice() {
+		if (_alcool)
+		{
+			return 6;
+		}
+		return 2;
 	}
-
 }
