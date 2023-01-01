@@ -9,7 +9,7 @@ public class Main {
 		Plat_Dessert plt1=new Plat_Dessert("pizza");
 		Plat_Dessert plt2=new Plat_Dessert("tiramisu",true);
 		Boisson bois1=new Boisson("coca");
-		Boisson bois2=new Boisson("86");
+		Boisson bois2=new Boisson("86",true);
 		//on Crée des menus
 		Menu men1=new Menu("petite formule");
 		men1.addComposant(plt1);
